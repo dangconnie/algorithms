@@ -1,0 +1,27 @@
+<script type="text/javascript">
+// LeetSpeak
+// Given a paragraph of text as a string, print the paragraph in leetspeak. To translate a string to leetspeak, you need to replace make the following character replacements (treat all input characters as uppercase):
+
+var leetLetters = ["A", "E", "G", "I", "O", "S", "T"];
+var leetNumbers = ["4", "3", "6", "1", "0", "5", "7"];
+
+
+function leetSpeak(string){
+	var myArray = string.split("");
+	for (var i=0; i<string.length; i++){
+ 		var inTheArray = leetLetters.indexOf(myArray[i]);
+ 		if(inTheArray > -1){
+ 			myArray[i] = leetNumbers[inTheArray];
+ 		} 
+ 	}
+ 	var putBackTogether = myArray.join("")
+ 	console.log(putBackTogether)
+ 		
+}
+
+
+leetSpeak("I HAVE NO IDEA WHAT I'M DOING");
+
+
+
+</script>

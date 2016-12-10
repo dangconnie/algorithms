@@ -1,0 +1,40 @@
+<script type="text/javascript">
+
+//## Long-long Vowels
+
+//loop through letters to find words with 2+ vowels. Extend to five variables using if statement.
+
+
+// Given a word as a string, print the result of extending any long vowels to the length of 5. Examples:
+// Good => Goooood
+// Cheese => Cheeeeese
+// Man => Man
+// Spoon => Spooooon
+// #loop #string #medium
+
+
+var doubleVowels = ["AA", "EE", "II", "OO", "UU"]
+var manyVowels = ["AAAAA", "EEEEE", "IIIII", "OOOOO", "UUUUU"]
+
+
+//Loop through string
+function extendVowels (string){
+	var stringSplitIntoArrays = string.split[""];
+	for (var i=0; i<string.length; i++){
+		var newArray = doubleVowels.indexOf(stringSplitIntoArrays[i]);
+		if(newArray > -1){
+			stringSplitIntoArrays[i] = manyVowels[newArray];
+		}
+	}
+	var putBackTogether = stringSplitIntoArrays.join("");
+	console.log(putBackTogether);
+}
+
+extendVowels("Good", "Cheese", "Man", "Spoon");
+
+
+
+
+
+
+</script> 
