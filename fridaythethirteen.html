@@ -13,6 +13,37 @@
 
 
 
+//In each year, loop through to find the number of Friday-the-thirteens in that year. Loop through 13 days of each month. If date = 5, that means it is a Friday.  Loop through 12 times each year (one time for each month). Pass year as a parameter into the function. 
+//Questions asks for number of Friday the 13 in for a given year. There is only one Friday the 13th each year, so it should print out 1 if done correctly.
+
+
+//i represents the number of times to loop through for each year
+//add to counter when a Friday the 13th is discovered
+//prints out 0 ---> code is not processing the date we're looking for??? What do I need to fix this?? Need to set a target date?
+
+
+
+function fridaysThirteenth(year){
+	var date = new Date();
+	var counter = 0;
+
+	for(var i=0; i<12; i++){
+		//Set target date for loop to search for
+		//i represents the month and 13th is the day in each month we're interested in. Year can be changed.
+		var targetDate = date.setFullYear(year, i, 13);
+		
+		//getDay!!!! not getDate.
+		if(date.getDay() === 5){
+			counter++;
+		}	
+	} 
+	console.log(counter)
+}
+fridaysThirteenth(2016);
+
+
+
+
 
 
 

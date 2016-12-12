@@ -13,28 +13,54 @@
 // #loop #string #medium
 
 
-var doubleVowels = ["AA", "EE", "II", "OO", "UU"]
-var manyVowels = ["AAAAA", "EEEEE", "IIIII", "OOOOO", "UUUUU"]
+
+//Good
+var string = "good";
+var doubleO = string.indexOf("oo");
 
 
-//Loop through string
-function extendVowels (string){
-	var stringSplitIntoArrays = string.split[""];
-	for (var i=0; i<string.length; i++){
-		var newArray = doubleVowels.indexOf(stringSplitIntoArrays[i]);
-		if(newArray > -1){
-			stringSplitIntoArrays[i] = manyVowels[newArray];
-		}
-	}
-	var putBackTogether = stringSplitIntoArrays.join("");
-	console.log(putBackTogether);
+if(doubleO > -1){
+	var oWord = string.replace("oo", "ooooo");	
+} 
+console.log(oWord);
+
+
+
+
+//Cheese
+var yellowThing = "cheese";
+var doubleE = yellowThing.indexOf("ee");
+
+
+if(doubleE > -1){
+	var eWord = yellowThing.replace("ee", "eeeee");	
+} 
+console.log(eWord);
+
+
+
+//Man
+var species = "man";
+var doubleA = species.indexOf("aa");
+
+if(doubleA > -1){
+	var aWord = species.replace("aa", "aaaaa");
+} else{
+	var aWord = species;
 }
-
-extendVowels("Good", "Cheese", "Man", "Spoon");
-
+console.log(aWord);
 
 
 
+
+//Spoon
+var utensil = "spoon";
+var moreO = utensil.indexOf("oo");
+
+if(moreO > -1){
+	var moreOWord = utensil.replace("oo", "ooooo");
+}
+console.log(moreOWord);
 
 
 </script> 
