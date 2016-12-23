@@ -1,0 +1,92 @@
+<script type="text/javascript">
+
+
+// 1) By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+// What is the 10 001st prime number?
+// -- NOTE -- for help, checkout the Sieve of Eratosthenes
+
+// Make an array of prime numbers up to 10002.
+
+// var knownPrime = [2];
+// var isPrime = true;
+
+// while(knownPrime.length <= 30){
+// 	for(var i = 3; i < knownPrime.length; i++) {
+// 		if (i % knownPrime.length[i] == 0){
+// 			isPrime = false;
+// 			knownPrime.push(i);
+// 		}
+// 	}
+	
+// }
+
+
+
+// Alternative way:
+// function isPrime(n){
+// 	for(let i=2; i < n; i++){
+// 		if(n % i == 0){
+// 			return false;
+// 		}
+// 	}
+// 	return n > 1;
+// }
+// primeNumbers = [];
+// for (let i = 2; i < 200000; i++){
+// 	if(isPrime(i)){
+// 		primeNumbers.push(i);
+// 	}
+// }
+
+// isPrime()
+
+
+
+
+
+
+//Efficient way
+function getPrime(n){
+	var prime = []; //We'll stash all our prime numbers here.
+	prime.push(2); //Start with 2 as it's the first prime number
+	console.log(prime);
+	var i = 3; //start checking prime at 3
+	while(prime.length < n){
+		
+	}
+
+	var isPrime = true;//Assume the number is prime until we find otherwise
+	for(var j = 0; j < prime.length; j++){//Divide the current number by every known prime
+		var iByJ = i % prime[j];
+		if(iByJ == 0){//This thing is notprime. We know because it divided evenly into something
+			isPrime = false;//update boolean
+			break;//don't waste time looking for more. It's not prime. leave the loop.
+		}
+	}
+	if(isPrime){
+		prime.push(i);
+	}
+	i++;
+}
+
+
+</script>
+
+
+
+
+
+<!-- // 2) A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+
+// Find the largest palindrome made from the product of two 3-digit numbers.
+ -->
+
+function findPali(start, end){
+	var paliArray = [];
+	for (var i= start; i <=end, i++){
+		for(var j = start; j<=end; j++){
+
+		}
+	}
+}
