@@ -4,7 +4,8 @@
 //  //Your code here!!
 //  return convertedStr;
 // } 
-
+//charAt() returns the specified character of the string. We used replace().
+//What if you have something like "aRe"? you can add "var spaceIndex = str.toLowercase.split("-")" to make all the letters lowercase first in case there are capital letters within that string.
 
 function caseConvert(str, conversionType){
 	if(conversionType === 'camelcase'){
@@ -21,6 +22,8 @@ function caseConvert(str, conversionType){
 		console.log(str)
 	}
 }
+
+
 
 // Write a Roman numeral converter. The program should be passed an integer and return the correct Roman numeral.
 // If you finish early, please do the reverse. Accept a roman numeral, and convert it to an integer
@@ -179,3 +182,20 @@ function decToRoman2 (decInput) {
 
 
 
+// Implament one of the following sorts in JavaScript:
+
+// Bubble Sort (easiest)
+// Merge Sort-divide items into groups and then further divide them into groups
+// Quick Sort
+// Selection Sort
+// Insertion Sort
+
+
+//Merge Sort
+function mergeSort(){
+	var splitList = Math.floor(list.length/2)
+	console.log(splitList);//will log 4 because of Math.floor. odd number
+}
+
+var list = [4,2,74,3,23,15,23,1,11]
+mergeSort(list);
