@@ -1,0 +1,50 @@
+// Write a JavaScript program to validate that a credit card number:
+// It must have 16 digits, unless it starts with 37 or 34. Then, and only then, it MUST have 15 digits
+// It must start with one of the folliowing. Print off "valid" and the type of card
+// 6011 = Discover Card
+// 37 or 34 = American Express
+// 4 = Visa
+// 50-55 = MasterCard
+
+
+//Check to see if it has 16 digits. 
+// var creditCardRegex = /\d{16}/;
+
+  
+function creditCard(creditCardNumber){
+  var ccNumString = creditCardNumber.toString();
+
+  if(ccNumString.length === 16){
+    if(ccNumString.match(/6011\d{12}/)){
+        console.log("Valid, Discover with " + ccNumString.length + " digits")
+    }else if(ccNumString.match(/5[05]\d{14}/)){
+        console.log("Valid, MasterCard with "+ ccNumString.length + " digits")
+    }else if(ccNumString.match(/4\d{15}/)){
+        console.log("Valid, Visa with " + ccNumString.length + " digits")
+    }else{
+      console.log("Invalid credit card number. Please try again.")
+    }
+  }else if(ccNumString.length === 15){
+    //Account for AMEX, which is 15 digits but valid as long as it starts with 34 or 37.
+      if(ccNumString.match(/3[74]\d{12}/)){
+      //AMEX has only 15 digits!!
+      console.log("Valid, AMEX with " + ccNumString.length + " digits")
+      }else{  
+       console.log("Invalid AMEX card number. Please try again.")
+      }
+  }else{
+      console.log("Invalid credit card number. Please try again.")
+  }
+}
+    
+    
+    
+creditCard(341515151515151);
+// AMEX starts with 34 or 37 with 15 digits, so this works
+creditCard(3415151515151515);
+//This AMEX card has too many digits.
+creditCard(41616161616161616);
+creditCard(6011161616161616);
+creditCard(5011161616161616);
+creditCard(128437239);
+creditCard(55555555);
