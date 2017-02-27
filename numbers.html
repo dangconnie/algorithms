@@ -1,0 +1,74 @@
+<script>
+
+
+// Numbers can be represented in English. For instance, 342 can be written three hundred and forty-two and contains 23 letters. 115 can be written one hundred and fifteen and contains 20 letters. (The use of "and" when writing out numbers is in compliance with British usage.) 
+
+var onesWords = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+var teenWords = ['ten','eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+var tensWords = ['placeholder', 'placeholder', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+function numberToString (input = null) {
+    
+    if (input < 10) {
+        return onesWords[input].length;
+    }
+    else if (input < 20) {
+        return teenWords[input-10].length;
+    }
+    else if (input < 100) {
+        var onethDigit = input % 10;
+        var tenthDigit = (input - onethDigit) / 10;
+        return tensWords[tenthDigit].length + onesWords[onethDigit].length;
+    }
+    else if (input < 1000) {
+        var newInput = input % 100;
+        var hundredthDigit = (input - newInput) / 100;
+        return (onesWords[hundredthDigit].length + 'hundred'.length + numberToString(newInput))
+    }
+    else if (input < 10000) {
+        var newInput = input % 1000;
+        var thousandthDigit = (input - newInput) / 1000;
+        console.log(thousandthDigit);
+        return (onesWords[thousandthDigit].length + 'thousand'.length + numberToString(newInput))
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+// Write unit tests on a program that will return how many letters are used in an number under 1000 (start small and grow):
+// 5 (expect 4)
+// 6 (expect 3)
+// 12 (expect 6)
+// 342 (expect 23)
+// 115 (expect 20)
+// 1000 (expect 11) 
+// 999 (expect 24) nine hundred and ninety-nine
+// Do more...
+describe ("String to Number Testing", () => {
+    it("2 to be defined", () => {
+        expect(numberToString(5)).toBeDefined();
+    });
+    it("5 to be 4", () => {
+        expect(numberToString(5)).toBe(4);
+    });
+    it("85 to be 11", () => {
+        expect(numberToString(85)).toBe(10);
+    });
+    it("586 to be 20", () => {
+        expect(numberToString(586)).toBe(20);
+    });
+    it("2532 to be 31", () => {
+        expect(numberToString(2532)).toBe(31);
+    });
+    it("238 to be 21", () => {
+        expect(numberToString(238)).toBe(21);
+    });
+})
+
+</script>
